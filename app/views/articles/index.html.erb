@@ -2,7 +2,7 @@
   <% @articles.each do |a| %>
     <h4 class="mt-5"><%= a.title %></h4>
     <p><%= a.created_at.strftime("%b%d, %Y") %></p>
-    <small><%= truncate(a.body, length: 170)%></small>
+    <small><%= truncate(a.body, length: 100)%></small>
     <p class="mt-3"><%= link_to "More detail", a, class: "text-dark" %></p>
   <% end %>
 </div>
