@@ -1,15 +1,22 @@
-<h1>論文詳細</h1>
-<p id="notice"><%= notice %></p>
+<div class="container col-9 float-left" style="margin-left: 100px;">
+  <h1 class="mt-5">Article Detail</h1>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>タイトル:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <%= @article.body %>
-</p>
-
-<%= link_to "一覧に戻る", articles_path %> |
-<%= link_to '編集', edit_article_path(@article) %> |
-<%= link_to '削除', article_path, method: :delete, data: {confirm: "削除してよろしいですか?"} %>
+  <table class="table border col-9">
+    <thead class="thead-light">
+      <th>
+        <%= @article.title %>
+      </th>
+    </thead>
+    <tbody>
+      <td>
+        <%= @article.body %>
+        <p class="mt-3">
+          <%= link_to "Articles", articles_path, class: "btn btn-primary btn-dark mr-3" %>
+          <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary btn-dark mr-3" %>
+          <%= link_to 'Delete', article_path, method: :delete, data: {confirm: "削除してよろしいですか?"}, class: "btn btn-primary btn-dark mr-3" %>
+        </p>
+      </td>
+    </tbody>
+  </table>
+</div>
