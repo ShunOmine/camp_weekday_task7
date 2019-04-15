@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>論文一覧</h1>
+
+<% @articles.each do |a| %>
+  <p><%= link_to a.title, a %></p>
+<% end %>
+
+<%= link_to '新論文投稿', new_article_path %>
